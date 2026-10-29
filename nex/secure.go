@@ -3,7 +3,8 @@ package nex
 import (
 	"encoding/hex"
 	"fmt"
-
+	"os"
+	"strings"
 	"github.com/PretendoNetwork/nex-go/v2"
 	common_globals "github.com/Whatsauser/nex-protocols-common-go/v2/globals"
 	"github.com/SamtendoNetwork/BetterWSC/globals"
@@ -32,7 +33,9 @@ func StartSecureServer() {
 		fmt.Printf("User: %d\n", packet.Sender().PID())
 		fmt.Printf("Protocol: %d (%s)\n", request.ProtocolID, protocolName)
 		fmt.Printf("Method: %d (%s)\n", request.MethodID, methodName)
-		fmt.Printf("Paramaters: %s\n", hex.EncodeToString(request.Parameters))
+		if !strings.EqualFold(os.Getenv("SN_WSC_DEBUG_MODE"), "true") {
+			fmt.Printf("Paramaters: %s\n", hex.EncodeToString(request.Parameters))
+		}
 		fmt.Println("===============")
 	})
 
