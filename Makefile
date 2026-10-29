@@ -58,7 +58,7 @@ LDFLAGS := -X 'main.serverBuildString=$(BUILD_STRING)'
 all: build
 
 build:
-	go build -ldflags "$(LDFLAGS)" -o ./build/server
+	go build -ldflags "$(LDFLAGS)" -o ./build/wii-sports-club
 
 test:
 	go test ./...
