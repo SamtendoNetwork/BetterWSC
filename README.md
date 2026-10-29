@@ -53,3 +53,4 @@ All configuration options are handled via environment variables
 | `SN_WSC_FRIENDS_GRPC_HOST`          | Host name for your friends server gRPC service | Yes                                 |
 | `SN_WSC_FRIENDS_GRPC_PORT`          | Port for your friends server gRPC service      | Yes                                 |
 | `SN_WSC_FRIENDS_GRPC_API_KEY`       | API key for your friends server gRPC service   | No (Assumed to be an open gRPC API) |
+| `SN_WSC_DEBUG_MODE`                 | Enable debug mode                              | No (Only enable if debugging is needed) |
