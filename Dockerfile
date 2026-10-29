@@ -13,7 +13,7 @@ RUN --mount=type=cache,target=/go/pkg/mod/ \
 
 COPY . .
 RUN --mount=type=cache,target=/go/pkg/mod/ \
-    CGO_ENABLED=0 go build -v -o ${app_dir}/build/server
+    CGO_ENABLED=0 go build -v -o ${app_dir}/build/wii-sports-club
 
 # * Running the final application
 FROM alpine:3.23 AS final
@@ -26,6 +26,6 @@ RUN mkdir -p ${app_dir}/log && chown go:go ${app_dir}/log
 
 USER go
 
-COPY --from=build ${app_dir}/build/server ${app_dir}/server
+COPY --from=build ${app_dir}/build/wii-sports-club ${app_dir}/wii-sports-club
 
-CMD [ "./server" ]
+CMD [ "./wii-sports-club" ]
