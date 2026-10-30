@@ -47,5 +47,6 @@ func StartSecureServer() {
 
 	registerCommonSecureServerProtocols()
 	database.InitDataStore()
+	ClearSessions()
 	globals.SecureServer.Listen(globals.SecureServerPort)
 }
