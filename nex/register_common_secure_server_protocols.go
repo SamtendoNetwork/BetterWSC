@@ -154,5 +154,7 @@ func registerCommonSecureServerProtocols() {
 	commonDataStoreProtocol.GetObjectInfosByDataStoreSearchParam = database.GetObjectInfosByDataStoreSearchParam
 	commonDataStoreProtocol.InitializeObjectByPreparePostParam = database.InitializeObjectByPreparePostParam
 	globals.SecureEndpoint.RegisterServiceProtocol(dataStoreProtocol)
-	
+
+	// Cleans up old/dead sessions from db every 10 sec and checks for empty sessions that were empty for longer than a minute
+	startSessionCleanup(10*time.Second, 1*time.Minute) 
 }
