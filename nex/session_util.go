@@ -3,7 +3,7 @@ import (
 	"time"
 
 	pqextended "github.com/PretendoNetwork/pq-extended"
-	"github.com/SamtendoNetwork/wii-sports-club/globals"
+	"github.com/SamtendoNetwork/BetterWSC/globals"
 )
 
 func startSessionCleanup(interval, emptyMaxAge time.Duration) {
